@@ -5,23 +5,24 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
 import AppsIcon from '@material-ui/icons/Apps';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import customTheme from '../theme'
 
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(customTheme => ({
     grow: {
         flexGrow: 1,
     },
     root: {
         position: "relative",
         background: "#fff",
-        borderBottom: "1px solid #ddd"
+        borderBottom: customTheme.greyBorder
     },
     navContainer: {
         display: "flex",
         flexWrap: "wrap",
         width: "100%",
-        [theme.breakpoints.up("md")]: {
+        [customTheme.breakpoints.up("md")]: {
             flexWrap: "no-wrap"
         },
     },
@@ -30,7 +31,10 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        color: "#5f6368"
+        color: "#5f6368",
+        [customTheme.breakpoints.down("sm")]: {
+            display: "none"
+        }
     },
     mainContainer: {
         width: "85%",
@@ -47,26 +51,26 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         alignItems: "center",
         position: "relative",
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.black, 0.05),
+        borderRadius: customTheme.shape.borderRadius,
+        backgroundColor: fade(customTheme.palette.common.black, 0.05),
         '&:hover': {
-            backgroundColor: fade(theme.palette.common.black, 0.05),
+            backgroundColor: fade(customTheme.palette.common.black, 0.05),
         },
         '&:focus': {
             boxShadow: "0 1px 2px 0 #888",
-            backgroundColor: fade(theme.palette.common.white, 0.75),
+            backgroundColor: fade(customTheme.palette.common.white, 0.75),
         },
-        // marginRight: theme.spacing(2),
+        // marginRight: customTheme.spacing(2),
         marginLeft: 0,
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(3),
+        [customTheme.breakpoints.up('sm')]: {
+            marginLeft: customTheme.spacing(3),
             width: '60%',
         },
 
     },
     searchIcon: {
-        padding: theme.spacing(0, 2),
+        padding: customTheme.spacing(0, 2),
         height: '100%',
         pointerEvents: 'none',
         display: 'flex',
@@ -75,48 +79,48 @@ const useStyles = makeStyles(theme => ({
         color: "#5f6368"
     },
     dropDownIcon: {
-        padding: theme.spacing(0, 2),
+        padding: customTheme.spacing(0, 2),
         height: '100%',
         pointerEvents: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         position: "absolute",
-        right: theme.spacing(1),
+        right: customTheme.spacing(1),
         color: "#5f6368"
     },
     inputRoot: {
         color: 'inherit',
         width: "100%",
-        paddingRight: theme.spacing(1)
+        paddingRight: customTheme.spacing(1)
     },
     inputInput: {
         fontSize: 18,
         color: "#5f6368",
         fontWeight: 400,
-        padding: theme.spacing(1, 0, 1, 0),
+        padding: customTheme.spacing(1, 0, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: `calc(0.1em + ${theme.spacing(0)}px)`,
-        transition: theme.transitions.create('width'),
+        paddingLeft: `calc(0.1em + ${customTheme.spacing(0)}px)`,
+        transition: customTheme.transitions.create('width'),
         width: '100%',
-        [theme.breakpoints.up('md')]: {
+        [customTheme.breakpoints.up('md')]: {
             width: '100%',
         },
         "&:focus $search": {
-            background: fade(theme.palette.common.white, .75)
+            background: fade(customTheme.palette.common.white, .75)
         }
     },
     sectionDesktop: {
         color: "#5f6368",
         display: 'none',
-        [theme.breakpoints.up('md')]: {
+        [customTheme.breakpoints.up('md')]: {
             display: 'flex',
             alignItems: "center"
         },
     },
     small: {
-        width: theme.spacing(4),
-        height: theme.spacing(4),
+        width: customTheme.spacing(4),
+        height: customTheme.spacing(4),
     },
 }))
 

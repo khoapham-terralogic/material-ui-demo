@@ -3,8 +3,13 @@ import { Card, CardContent, CardMedia, makeStyles, Typography } from '@material-
 const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 375,
-        width: "13rem",
-        border: "1px solid #ddd"
+        width: "14rem",
+        border: "1px solid #ddd",
+        transition: "all 0.5s",
+        [theme.breakpoints.down("sm")]: {
+            width: "6rem",
+            maxWidth: 275,
+        }
     },
     media: {
         height: 0,

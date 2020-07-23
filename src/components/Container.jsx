@@ -7,6 +7,7 @@ import ViewListOutlinedIcon from '@material-ui/icons/ViewListOutlined';
 import FolderIcon from '@material-ui/icons/Folder';
 import MyCard from './Card'
 import Folder from './Folder';
+import customTheme from '../theme';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -40,11 +41,14 @@ const useStyles = makeStyles(theme => ({
     folderContainer: {
         marginTop: theme.spacing(2)
     },
+    listContainer: {
+        marginTop: theme.spacing(2)
+    },
     table: {
         minWidth: 650,
     },
     tableRow: {
-        color: "#555",
+        color: customTheme.textColor,
         fontSize: 12,
         transition: "color 0.5s",
         "&:hover": {
@@ -60,67 +64,80 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "flex-start",
         alignItems: "center",
-        color: "#555"
+        color: customTheme.textColor
     }
 }))
 const MyContainer = () => {
-    const [isList, setIsList] = useState(false)
+    const [isList, setIsList] = useState(true)
     const files = [
         {
-            title: "Hentai",
-            img: "/images/avatar.jpg",
+            title: "Thu cuối rồi cũng",
+            img: "/images/tail.jpg",
             owner: "Me",
             timeStamp: "15 minutes ago"
         },
         {
-            title: "Porn",
-            img: "/images/idol.jpg",
+            title: "qua nhanh",
+            img: "/images/tailFlip.jpg",
             owner: "Me",
             timeStamp: "15 minutes ago"
         },
         {
-            title: "Asia",
-            img: "/images/jisoo.jpg",
+            title: "cuốn theo cơn gió",
+            img: "/images/tail.jpg",
             owner: "Me",
             timeStamp: "Just now"
         },
         {
-            title: "Fake taxi",
-            img: "/images/idol.jpg",
+            title: "lặng lẽ hòa tan",
+            img: "/images/tailFlip.jpg",
             owner: "Me",
             timeStamp: "2 days ago"
         },
         {
-            title: "Public agents",
-            img: "/images/jisoo.jpg",
+            title: "vào trong một",
+            img: "/images/head1.jpg",
+            owner: "Me",
+            timeStamp: "A week ago"
+        },
+        {
+            title: "buổi chiều mưa vắng",
+            img: "/images/idol.jpg",
             owner: "Me",
             timeStamp: "A week ago"
         }
+
     ]
     const folders = [
         {
-            name: "Phim sex hay"
+            name: "Có lẽ nào..."
         },
         {
-            name: "Phim sex tuyen chon"
+            name: "Em vội quên đi"
         },
         {
-            name: "Phim sex top"
+            name: "Có lẽ nào..."
         },
         {
-            name: "Phim sex chau a"
+            name: "Em đưa mùa thu đi"
         },
         {
-            name: "Phim sex chau au"
+            name: "Có lẽ nào..."
         },
         {
-            name: "Phim sex chau my"
+            name: "Mùa thu"
         },
         {
-            name: "Phim sex gay"
+            name: "chẳng còn lại gì,"
         },
         {
-            name: "Phim sex les"
+            name: "trong tâm trí em"
+        },
+        {
+            name: "Có lẽ nào..."
+        },
+        {
+            name: "Có lẽ, có lẽ nào"
         }
     ]
 
@@ -140,7 +157,7 @@ const MyContainer = () => {
             </div>
             <Container className={classes.quickContainer}>
                 <div className={classes.label}>Quick Access</div>
-                <Grid className={classes.quickContainer} spacing={1} container>
+                <Grid className={classes.quickContainer} spacing={2} container>
                     {files.map((file, index) => (
                         <Grid key={index} item>
                             <MyCard file={file} />
@@ -150,7 +167,7 @@ const MyContainer = () => {
             </Container>
             <Container className={classes.folderContainer}>
                 <div className={classes.label}>Folders</div>
-                <Grid className={classes.folderContainer} spacing={1} container>
+                <Grid className={classes.folderContainer} spacing={2} container>
                     {folders.map((folder, index) => (
                         <Grid key={index} item>
                             <Folder folder={folder} />
@@ -158,7 +175,7 @@ const MyContainer = () => {
                     ))}
                 </Grid>
             </Container>
-            {isList ?
+            {!isList ?
                 <Container className={classes.listContainer}>
                     <div className={classes.label}>Files</div>
                     <Table className={classes.table}>
@@ -187,7 +204,7 @@ const MyContainer = () => {
                 :
                 <Container className={classes.quickContainer}>
                     <div className={classes.label}>Files</div>
-                    <Grid className={classes.quickContainer} spacing={1} container>
+                    <Grid className={classes.quickContainer} spacing={2} container>
                         {files.map((file, index) => (
                             <Grid key={index} item>
                                 <MyCard file={file} />
