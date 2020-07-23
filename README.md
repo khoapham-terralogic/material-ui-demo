@@ -1,8 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# DEMO FOR MATERIAL UI
+
+# `==TODO==`
+
+- [x] Initialize app
+- [x] Finish
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+## `npm run deploy`
+
+Deploy this application through surge.sh
 
 ### `npm start`
 

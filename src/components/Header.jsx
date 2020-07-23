@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, AppBar, Toolbar, Typography, Box, InputBase, fade, IconButton, Badge, Avatar } from '@material-ui/core'
+import { makeStyles, AppBar, Toolbar, Box, InputBase, fade, IconButton, Avatar } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';

@@ -9,10 +9,11 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         background: theme.palette.common.white,
         boxShadow: "0 1px 2px #ddd",
-        borderRadius: theme.spacing(1),
         border: "1px solid #ddd",
+        borderRadius: theme.spacing(1),
         width: "14rem",
         maxWidth: 375,
+        alignItems: "center"
     },
     label: {
         marginLeft: theme.spacing(1)

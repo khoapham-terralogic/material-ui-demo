@@ -11,17 +11,26 @@ import StorageIcon from '@material-ui/icons/Storage';
 const useStyles = makeStyles(theme => ({
     root: {
         minHeight: "100vh",
-        width: "15%"
+        position: "relative",
+        transition: "all ease 0.5s",
+        width: "7%",
+        [theme.breakpoints.up("md")]: {
+            width: "15%",
+        }
     },
     button: {
-        background: "#fff",
-        borderRadius: "14rem",
-        margin: theme.spacing(2, 0, 0, 0),
-        padding: theme.spacing(1.5, 3),
-        color: "#555",
-        fontSize: 13,
-        "&:hover": {
-            background: fade(theme.palette.common.black, 0.05)
+        display: "none",
+        [theme.breakpoints.up("md")]: {
+            background: "#fff",
+            borderRadius: "14rem",
+            margin: theme.spacing(2, 0, 0, 0),
+            padding: theme.spacing(1.5, 3),
+            color: "#555",
+            fontSize: 13,
+            "&:hover": {
+                background: fade(theme.palette.common.black, 0.05)
+            },
+            display: "initial"
         }
     },
     navList: {
@@ -31,9 +40,13 @@ const useStyles = makeStyles(theme => ({
         flexDirection: "column",
     },
     secondNavList: {
-        marginTop: theme.spacing(1),
-        width: "70%",
-        float: "right"
+        display: "none",
+        [theme.breakpoints.up("md")]: {
+            marginTop: theme.spacing(1),
+            width: "70%",
+            float: "right",
+            display: "block"
+        }
     },
     navLink: {
         display: "flex",
@@ -49,10 +62,14 @@ const useStyles = makeStyles(theme => ({
         }
     },
     label: {
-        color: "#5f6368",
-        fontSize: 14,
-        fontWeight: 500,
-        margin: theme.spacing(0, 3)
+        display: "none",
+        [theme.breakpoints.up("md")]: {
+            color: "#5f6368",
+            fontSize: 14,
+            fontWeight: 500,
+            margin: theme.spacing(0, 3),
+            display: "block"
+        }
     },
     link: {
         color: "#15c",

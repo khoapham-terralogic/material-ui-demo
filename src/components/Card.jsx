@@ -3,7 +3,8 @@ import { Card, CardContent, CardMedia, makeStyles, Typography } from '@material-
 const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 375,
-        width: "13rem"
+        width: "13rem",
+        border: "1px solid #ddd"
     },
     media: {
         height: 0,
@@ -14,9 +15,10 @@ const useStyles = makeStyles(theme => ({
     },
     pos: {
         marginBottom: 12,
+        fontSize: 12
     },
 }))
-const MyCard = ({ file: { title, img } }) => {
+const MyCard = ({ file: { title, img, timeStamp } }) => {
     const classes = useStyles()
     return (
         <Card className={classes.root}>
@@ -28,7 +30,7 @@ const MyCard = ({ file: { title, img } }) => {
             <CardContent>
                 <Typography className={classes.title}>{title}</Typography>
                 <Typography gutterBottom className={classes.pos} color="textSecondary">
-                    You edited today
+                    {timeStamp}
                 </Typography>
             </CardContent>
         </Card>
