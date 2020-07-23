@@ -16,7 +16,9 @@ const useStyles = makeStyles(theme => ({
         alignItems: "center",
         [theme.breakpoints.down("md")]: {
             padding: theme.spacing(1, 1.5),
-            withd: "auto",
+            width: "8rem",
+            textOverflow: "ellipsis",
+            overflow: "hidden"
         }
     },
     label: {

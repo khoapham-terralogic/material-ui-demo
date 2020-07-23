@@ -6,9 +6,9 @@ const useStyles = makeStyles(theme => ({
         width: "14rem",
         border: "1px solid #ddd",
         transition: "all 0.5s",
+        height: "100%",
         [theme.breakpoints.down("sm")]: {
             width: "6rem",
-            maxWidth: 275,
         }
     },
     media: {
@@ -16,9 +16,16 @@ const useStyles = makeStyles(theme => ({
         paddingTop: '56.25%', // 16:9
     },
     title: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: 10,
+
+        },
         fontSize: 14,
     },
     pos: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: 9,
+        },
         marginBottom: 12,
         fontSize: 12
     },
