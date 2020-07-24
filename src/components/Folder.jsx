@@ -13,10 +13,20 @@ const useStyles = makeStyles(theme => ({
         borderRadius: theme.spacing(1),
         width: "14rem",
         maxWidth: 375,
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.down("md")]: {
+            padding: theme.spacing(1, 1.5),
+            width: "8rem",
+            textOverflow: "ellipsis",
+            overflow: "hidden"
+        }
     },
     label: {
-        marginLeft: theme.spacing(1)
+        marginLeft: theme.spacing(1),
+        transition: "all 0.5s",
+        [theme.breakpoints.down("md")]: {
+            fontSize: 10
+        }
     }
 }))
 

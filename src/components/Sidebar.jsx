@@ -7,6 +7,7 @@ import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import DeleteIcon from '@material-ui/icons/Delete';
 import StorageIcon from '@material-ui/icons/Storage';
+import customTheme from '../theme';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -23,14 +24,17 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up("md")]: {
             background: "#fff",
             borderRadius: "14rem",
-            margin: theme.spacing(2, 0, 0, 0),
+            margin: theme.spacing(2, 0, 0, 2),
             padding: theme.spacing(1.5, 3),
-            color: "#555",
+            color: customTheme.textColor,
             fontSize: 13,
             "&:hover": {
                 background: fade(theme.palette.common.black, 0.05)
             },
-            display: "initial"
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center"
         }
     },
     navList: {
@@ -54,11 +58,18 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "flex-start",
         padding: theme.spacing(1, 2),
         color: "#5f6368",
+        transition: "all 0.5s",
         '&:hover': {
             background: fade(theme.palette.common.black, 0.05),
             cursor: "pointer",
             borderTopRightRadius: "20px",
             borderBottomRightRadius: "20px",
+            [theme.breakpoints.down("sm")]: {
+                background: "none"
+            }
+        },
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(2, 0.5),
         }
     },
     label: {
@@ -78,7 +89,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 500
     },
     progress: {
-        color: "rgba(66,133,244,0.7)",
+        color: customTheme.palette.purple,
         background: fade(theme.palette.common.black, .1)
     },
     btn: {
@@ -95,9 +106,9 @@ const Sidebar = () => {
                     color="primary"
                     size="large"
                     className={classes.button}
-                    startIcon={<AddOutlinedIcon />}
                 >
-                    New
+                    <AddOutlinedIcon />
+                    <Box>New</Box>
                 </Button>
                 <div className={classes.navList}>
                     <div className={classes.navLink}><AllInboxIcon /><Box className={classes.label}>My Drive</Box></div>

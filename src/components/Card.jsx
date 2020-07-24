@@ -3,17 +3,29 @@ import { Card, CardContent, CardMedia, makeStyles, Typography } from '@material-
 const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 375,
-        width: "13rem",
-        border: "1px solid #ddd"
+        width: "14rem",
+        border: "1px solid #ddd",
+        transition: "all 0.5s",
+        height: "100%",
+        [theme.breakpoints.down("sm")]: {
+            width: "6rem",
+        }
     },
     media: {
         height: 0,
         paddingTop: '56.25%', // 16:9
     },
     title: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: 10,
+
+        },
         fontSize: 14,
     },
     pos: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: 9,
+        },
         marginBottom: 12,
         fontSize: 12
     },
