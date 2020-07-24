@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         color: "#5f6368",
         [theme.breakpoints.up("md")]: {
             width: "85%",
-        }
+        },
     },
     grow: {
         flexGrow: 1
@@ -30,7 +30,8 @@ const useStyles = makeStyles(theme => ({
     headerBtn: {
         padding: theme.spacing(1, 2),
         margin: theme.spacing(.5, 0),
-        textTransform: "capitalize"
+        textTransform: "capitalize",
+        color: theme.textColor
     },
     btnContainer: {
         display: "flex",
@@ -45,7 +46,18 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(2)
     },
     table: {
+        width: "100%",
+        overflowY: "scroll",
         minWidth: 650,
+        [customTheme.breakpoints.down("md")]: {
+            minWidth: 400,
+        },
+        [customTheme.breakpoints.down("sm")]: {
+            minWidth: 250,
+        },
+        [customTheme.breakpoints.down("xs")]: {
+            minWidth: 200,
+        },
     },
     tableRow: {
         color: customTheme.textColor,
@@ -54,11 +66,11 @@ const useStyles = makeStyles(theme => ({
         "&:hover": {
             cursor: "pointer",
             background: fade(theme.palette.common.black, 0.1)
-        }
+        },
     },
     label: {
         fontSize: 14,
-        fontWeight: 500
+        fontWeight: 500,
     },
     tableName: {
         display: "flex",

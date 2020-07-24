@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
         color: "#5f6368",
         transition: "all 0.5s",
         '&:hover': {
-            background: fade(theme.palette.common.black, 0.05),
+            background: fade(theme.palette.common.black, 0.1),
             cursor: "pointer",
             borderTopRightRadius: "20px",
             borderBottomRightRadius: "20px",

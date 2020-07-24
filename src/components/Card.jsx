@@ -7,15 +7,24 @@ const useStyles = makeStyles(theme => ({
         border: "1px solid #ddd",
         transition: "all 0.5s",
         height: "100%",
+        [theme.breakpoints.down("md")]: {
+            width: "10rem",
+        },
         [theme.breakpoints.down("sm")]: {
             width: "6rem",
-        }
+        },
+        [theme.breakpoints.down("xs")]: {
+            width: "4rem",
+        },
     },
     media: {
         height: 0,
         paddingTop: '56.25%', // 16:9
     },
     title: {
+        [theme.breakpoints.down("xs")]: {
+            fontSize: 7,
+        },
         [theme.breakpoints.down("sm")]: {
             fontSize: 10,
 
@@ -23,6 +32,10 @@ const useStyles = makeStyles(theme => ({
         fontSize: 14,
     },
     pos: {
+        [theme.breakpoints.down("xs")]: {
+            display: "none",
+            fontSize: 7,
+        },
         [theme.breakpoints.down("sm")]: {
             fontSize: 9,
         },

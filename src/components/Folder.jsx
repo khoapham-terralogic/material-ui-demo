@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     label: {
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.spacing(2),
         transition: "all 0.5s",
         [theme.breakpoints.down("md")]: {
             fontSize: 10
